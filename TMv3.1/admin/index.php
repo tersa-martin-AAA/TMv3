@@ -1,3 +1,12 @@
+<?php
+session_start();
+if(!isset($_SESSION['login'])){
+header("Location: ../login.php");
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -9,7 +18,7 @@
     </head>
     
 	
-	<body style="background-image: url(images/pattern.png), url(images/Fondo.jpg);">
+	<body style="background-image: url(images/pattern.png), url(images/fondo.png);">
         <div class="container">
             <h1>Teresa Martin <span> Sistema web v0.1</span></h1>
             <div class="content">
@@ -20,6 +29,7 @@
                     <li><a href="reportes.html"><b>Reportes</b></a></li>
                     <li><a href="becas.html"><b>Becas</b></a></li>
                     <li><a href="ciclos.html"><b>Ciclos</b></a></li>
+                    <li><a href="tbl-mostrar-admin.php"><b>Administradores</b></a></li>
 					<li><a href="logout.php"><b>cerrar cession</b></a></li>
                 </ul>
             </div>
