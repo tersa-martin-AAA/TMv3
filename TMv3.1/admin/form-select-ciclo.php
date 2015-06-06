@@ -16,8 +16,8 @@
             <div class="content">
 				<div class="more">
                     <ul>
-						<li class="selected"><a href="index.html">Menu</a></li>
-                        <li><a href="becas.html">cancelar y regresar</a></li>
+						<li class="selected"><a href="index.php">Menu</a></li>
+                        <li><a href="ciclos.php">cancelar y regresar</a></li>
 
 						
                     </ul>
@@ -25,21 +25,19 @@
 				
 				<div class="contenido">
 				
-					<h2> Tabla de Becas </h2>
+					<h2> Ciclos </h2>
 					
 					<table class="tabla" border="2px">
-						<caption><b>Becas Actuales</b></caption>
+						<caption><b>Tabla de Ciclos</b></caption>
 						<tr>
+							<td>Año</td>
 							<td>Nombre</td>
-							<td>Descuento</td>
 							<td>Editar</td>
-							<td>Eliminar</td>
 						</tr>
 						<tr>
-							<td>nombre Beca</td>
-							<td>descuento beca</td>
-							<td><a href="form-add-beca.html">icono editar</a></td>
-							<td>icono eliminar</td>
+							<td>nombre ciclo</td>
+							<td>descuento ciclo</td>
+							<td><a href="form-add-ciclo2.php">icono editar</a></td>
 						</tr>
 					</table>
 					

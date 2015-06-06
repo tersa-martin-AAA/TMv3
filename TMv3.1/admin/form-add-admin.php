@@ -17,7 +17,7 @@
 				<div class="more">
                     <ul>
 						<li class="selected"><a href="index.php">Menu</a></li>
-                        <li><a href="becas.html">cancelar y regresar</a></li>
+                        <li><a href="administradores.php">cancelar y regresar</a></li>
 
 						
                     </ul>

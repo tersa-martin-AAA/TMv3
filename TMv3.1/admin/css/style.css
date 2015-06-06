@@ -1,6 +1,7 @@
 @import url('reset.css');
 /* General Demo Style */
 body{
+    background-image: url(../images/Fondo.jpg);
 	background-color: transparent;
     background-repeat: repeat, no-repeat;
     background-position: center center;
@@ -8,13 +9,62 @@ body{
     background-size: auto, cover;
 	font-family: 'Josefin Slab', Arial, sans-serif;
 }
-.container{
+<!--.container{
 	position:relative;
+
+}-->
+
+.encabezado{
+    margin-bottom: 8%;
 }
+
+.menu{
+    margin-bottom: 8%;
+}
+
+.subtitulo{
+    margin-bottom: 5%;
+
+}
+
+.rowsubmenu a :hover{
+	background:#DABF27;
+	color:#fff;
+}
+
+.aciones{
+    text-align: center;
+    margin-bottom: 8%;
+	padding: 5px;
+	background-color:#125DB3;
+	color:#fff;
+	border-radius: 20px;
+}
+
+.forms{
+    background-color: deepskyblue;
+}
+
+.tbl{
+    background-color: dodgerblue;
+}
+.pie{
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 2%;
+    margin-top: 5%;
+}
+
+.vacio{
+    
+}
+
 a{
 	color: #5692D7;
 	text-decoration: none;
 }
+<!--
 .clr{
 	clear: both;
 }
@@ -23,7 +73,10 @@ a{
     width:90%;
     margin: 0 auto;
 	margin: 5%;
+
 }
+-->
+
 h1{
 	margin:0px;
 	padding:5px;
@@ -50,8 +103,6 @@ h1 span{
 	height:30px;
 	clear:both;
 	font-family: 'Arial Narrow', Arial, sans-serif;
-	width:60%;
-	margin:0 auto;
     color:#fff;
 	list-style:none;
 }
@@ -125,44 +176,26 @@ h1 span{
 	color: #125DB3;
 }
 
-.contenido{
+<!--.contenido{
 	margin:5px;
 	width:400px;
 	padding:15px;
 	position:relative;
 	margin:0 auto;
 	
-}
+}-->
 
-.contenido h2 {
-	font-size:50px;
+h2 {
+	font-size:30px;
 	text-align:center;
 	color:#DAAB12;
 }
 
-.divisor{
-	width:90%;
-	padding: 5px;
-	background-color:#125DB3;
-	color:#fff;
-	margin:0 auto;
-	border-radius: 20px;
-}
-.contenido a :hover{
-	background:#DABF27;
-	color:#fff;
-}
 
-.divisor h3{
-	font-size:20px;
-	text-align:center;
-}
-
-
-.contenidoform{
+<!--.contenidoform{
 	margin:5px;
-	width:70%;
-	padding:15px;
+	width:100%;
+	padding:0px;
 	position:relative;
 	margin:0 auto;
 	
@@ -175,7 +208,7 @@ h1 span{
 }
 
 .formularios{
-	width:100%;
+	width:50%;
 	padding: 15px;
 	background-color:#B29200;
 	color:#fff;
@@ -184,9 +217,8 @@ h1 span{
 }
 
 
-
 .formulario > input, label{
-	margin-left:40%;
+	margin-left:30%;
 }
 
 .formulario > .etiqueta{
@@ -201,6 +233,8 @@ h1 span{
 .formulario > .texbox{
 	height:30px;
 }
+
+
 
 .tabla > caption  {
 	font-size:30px;
@@ -236,6 +270,6 @@ h1 span{
 	color:#DAAB12;
 }
 
-
+-->
 
 

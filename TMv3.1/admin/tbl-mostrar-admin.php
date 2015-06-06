@@ -21,8 +21,8 @@
             <div class="content">
 				<div class="more">
                     <ul>
-						<li class="selected"><a href="index.html">Menu</a></li>
-                        <li><a href="becas.html">cancelar y regresar</a></li>
+						<li class="selected"><a href="index.php">Menu</a></li>
+                        <li><a href="administradores.php">cancelar y regresar</a></li>
 
 						
                     </ul>
@@ -58,7 +58,7 @@
                                                         <td><?php echo $fila->password?></td>
                                                         <td><?php echo $fila->idprivilegios?></td>
                                                         <td><a href="form-add-admin.php">icono editar</a></td>
-							<td>icono eliminar</td>
+                                                        <td><a href="lib/eliminar.php?id=<?php echo $fila->idadministrador; ?>">icono eliminar</a></td>
 						</tr>
                                                 <?php
                                                 }

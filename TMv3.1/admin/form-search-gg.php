@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Teresa Martin Sistema Web</title>
+        <title>Blur Menu with CSS3 Transitions</title>
         <meta charset="UTF-8" />
 
         <link rel="stylesheet" type="text/css" href="css/style.css" />
@@ -12,12 +12,12 @@
 	
 	<body style="background-image: url(images/pattern.png), url(images/Fondo.jpg);">
         <div class="container">
-            <h1>Teresa Martin <span> Sistema web v0.1</span></h1>
+            <h1>Teresa Mrtin <span> Sistema web v0.1</span></h1>
             <div class="content">
 				<div class="more">
                     <ul>
-						<li class="selected"><a href="index.html">Menu</a></li>
-                        <li><a href="reportes.html">cancelar y regresar</a></li>
+						<li class="selected"><a href="index.php">Menu</a></li>
+                        <li><a href="reportes.php">cancelar y regresar</a></li>
 
 						
                     </ul>
@@ -25,25 +25,48 @@
 				
 				<div class="contenidoform">
 				
-					<h2> Genera tu reporte diario </h2>
+					<h2> Generar listas </h2>
 					
 					<div class="formularios">
 						 
-						<form action="form-search2-reporte.html" method="post" class="formulario"> 
+						<form action="#" method="post" class="formulario"> 
 							
-							<div class="etiqueta">
-								<label>Desde</label>
+							
+								<div class="etiqueta">
+								<label>Grado</label>
 							</div>
 							<div class="texbox">
-								<input type="date" name="Mes">
+								<select name="grado">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+								</select>
 							</div>
 							<br>
 							<br>
 							<div class="etiqueta">
-								<label>Hasta</label>
+								<label>Grupo</label>
 							</div>
 							<div class="texbox">
-								<input type="date" name="Mes">
+								<select name="grupo">
+									<option value="1">A</option>
+									<option value="2">B</option>
+									<option value="3">C</option>
+								</select>
+							</div>
+							<br>
+							<br>
+							<div class="etiqueta">
+								<label>Escolaridad</label>
+							</div>
+							<div class="texbox">
+								<select name="escolaridad">
+									<option value="1">Prescolar</option>
+									<option value="2">Primaria</option>
+								</select>
 							</div>
 							<br>
 							<br>

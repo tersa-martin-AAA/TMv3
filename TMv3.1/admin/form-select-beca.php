@@ -16,32 +16,35 @@
             <div class="content">
 				<div class="more">
                     <ul>
-						<li class="selected"><a href="index.html">Menu</a></li>
-                        <li><a href="alumnos.html">Alumnos</a></li>
-                        <li><a href="pagos.html">Pagos</a></li>
-                        <li><a href="reportes.html">Reportes</a></li>
-						<li><a href="becas.html">becas</a></li>
-						<li><a href="ciclos.html">ciclos</a></li>
-						<li><a href="logout.php">Cerrar cession </a></li>
+						<li class="selected"><a href="index.php">Menu</a></li>
+                        <li><a href="becas.php">cancelar y regresar</a></li>
+
 						
                     </ul>
 				</div>
 				
-				    <div class="contenido">
+				<div class="contenido">
 				
-                        <h2> Modulo Pagos </h2>
-
-                        <a href="form-add-pagMensual.html"> <div class="divisor">
-                             <h3>Pago mensual</h3> 
-                             <p> Descripcion del proceso</p>
-
-                             <i class="icon-createfile"></i>
-                        </div></a>
-
-                        <br>
-
-                    </div>
-            </div>
+					<h2> Tabla de Becas </h2>
+					
+					<table class="tabla" border="2px">
+						<caption><b>Becas Actuales</b></caption>
+						<tr>
+							<td>Nombre</td>
+							<td>Descuento</td>
+							<td>Editar</td>
+							<td>Eliminar</td>
+						</tr>
+						<tr>
+							<td>nombre Beca</td>
+							<td>descuento beca</td>
+							<td><a href="form-add-beca.php">icono editar</a></td>
+							<td>icono eliminar</td>
+						</tr>
+					</table>
+					
+					
+				</div>
         </div>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
     </body>

@@ -42,33 +42,28 @@
               <div class="row">
               <div class="col-xs-1 col-sm-2 col-md-3 vacio"></div>
               <div class="col-xs-10 col-sm-8 col-md-6 subtitulo">
-                  <h2> Modulo Administradores </h2>  
+                  <h2> Modulo Reportes </h2>     
               </div>
               <div class="col-xs-1 col-sm-2 col-md-3 vacio"></div>
               </div>
               
               <div class="row rowsubmenu">
               
-              <a href="form-add-admin.php"><div class="col-xs-6 col-sm-3 col-md-3 aciones">
-                 <h3>Agregar</h3> 
+              <a href="form-matricula-alumno.php"><div class="col-xs-6 col-sm-3 col-md-3 aciones">
+                 <h3>Consulta de alumno</h3> 
                  <p> Descripcion del proceso</p>
                   </div></a>
-              <a href="tbl-mostrar-admin.php"><div class="col-xs-6 col-sm-3 col-md-3 aciones">
-                  <h3>Mostrar Administradores</h3> 
+              <a href="form-search1-gg.php"><div class="col-xs-6 col-sm-3 col-md-3 aciones">
+                  <h3>Consulta de grupos</h3> 
                   <p> Descripcion del proceso</p>
                   </div></a>
-               <a href="#"><div class="col-xs-6 col-sm-3 col-md-3 aciones"><h3></h3> 
-                  <p> </p>
+               <a href="form-search1-reporte.php"><div class="col-xs-6 col-sm-3 col-md-3 aciones"><h3>Reportes de ingresos</h3> 
+                  <p> Descripcion del proceso</p>
                   </div></a>
               <a href="#"><div class="col-xs-6 col-sm-3 col-md-3 aciones">
                   <h3></h3> 
                   <p> </p>
                   </div></a>
-              
-              <div class="col-xs-6 col-sm-3 col-md-3 aciones">accion</div></a>
-              <div class="col-xs-6 col-sm-3 col-md-3 aciones">accion</div></a>
-              <div class="col-xs-6 col-sm-3 col-md-3 aciones">accion</div></a>
-              <div class="col-xs-6 col-sm-3 col-md-3 aciones">accion</div></a>
               
                </div>           
         </div>
@@ -82,4 +77,4 @@
 
     <script src="js/bootstrap.min.js"></script>
   </body>
-</html>
+</html> 

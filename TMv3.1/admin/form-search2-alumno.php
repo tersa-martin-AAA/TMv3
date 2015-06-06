@@ -15,8 +15,9 @@
 
   </head>
   <body>
-     <div class="container">           
-             <div class="row">
+      <div class="container">
+           
+       <div class="row">
              <div class="col-xs-12 col-sm-12 col-md-12 encabezado"><h1>Teresa Martin <span> Sistema web v0.1</span></h1></div>
               </div>
               
@@ -42,44 +43,49 @@
               <div class="row">
               <div class="col-xs-1 col-sm-2 col-md-3 vacio"></div>
               <div class="col-xs-10 col-sm-8 col-md-6 subtitulo">
-                  <h2> Modulo Administradores </h2>  
+                  <h2> Datos del alumno </h2>
               </div>
               <div class="col-xs-1 col-sm-2 col-md-3 vacio"></div>
               </div>
               
-              <div class="row rowsubmenu">
+              <div class="row">
               
-              <a href="form-add-admin.php"><div class="col-xs-6 col-sm-3 col-md-3 aciones">
-                 <h3>Agregar</h3> 
-                 <p> Descripcion del proceso</p>
-                  </div></a>
-              <a href="tbl-mostrar-admin.php"><div class="col-xs-6 col-sm-3 col-md-3 aciones">
-                  <h3>Mostrar Administradores</h3> 
-                  <p> Descripcion del proceso</p>
-                  </div></a>
-               <a href="#"><div class="col-xs-6 col-sm-3 col-md-3 aciones"><h3></h3> 
-                  <p> </p>
-                  </div></a>
-              <a href="#"><div class="col-xs-6 col-sm-3 col-md-3 aciones">
-                  <h3></h3> 
-                  <p> </p>
-                  </div></a>
-              
-              <div class="col-xs-6 col-sm-3 col-md-3 aciones">accion</div></a>
-              <div class="col-xs-6 col-sm-3 col-md-3 aciones">accion</div></a>
-              <div class="col-xs-6 col-sm-3 col-md-3 aciones">accion</div></a>
-              <div class="col-xs-6 col-sm-3 col-md-3 aciones">accion</div></a>
-              
-               </div>           
-        </div>
-        
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 pie"><p>Sistema Web Teresa Martin 2015 todos los derechos reserbados</p></div>
-        </div>
-              
-              
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+              <div class="col-xs-1 col-sm-1 col-md-1 vacio"></div>
+              <div class="col-xs-10 col-sm-10 col-md-10 tbl">
+                  <br>
+                  <div class="table-responsive">
+                      <table class="table table-bordered table-hover">
+                          <tr class="active">
+							<th>Matricula</th>
+							<th>Nombre</th>
+							<th>A. paterno</th>
+							<th>A. materno</th>
+							<th>Sexo</th>
+							<th>Estatus</th>
+							<th>Grado/Grupo</th>
+							<th>Escolaridad</th>
+							<th>Tutor</th>
+							<th>Tipo de beca</th>
+						</tr>
+						<tr>
+							<td>basio</td>
+							<td>basio</td>
+							<td>basio</td>
+							<td>basio</td>
+							<td>basio</td>
+							<td>basio</td>
+							<td>basio</td>
+							<td>basio</td>
+							<td>basio</td>
+							<td>basio</td>
+						</tr>
 
-    <script src="js/bootstrap.min.js"></script>
-  </body>
-</html>
+                      </table>
+                  </div>
+              </div>
+              <div class="col-xs-1 col-sm-1 col-md-1 vacio"></div>
+               </div>
+      </div>
+               <div class="row">
+             <div class="col-xs-12 col-sm-12 col-md-12 pie"><p>Sistema Web Teresa Martin 2015 todos los derechos reserbados</p></div>
+              </div>

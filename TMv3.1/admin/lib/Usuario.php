@@ -109,4 +109,23 @@ class Usuario{
             print "Error: ".$e->getMessage();
         }
     }
+    
+    public function  delet_user($idadministrador){
+        try {
+            $sql="DELETE From administrador WHERE idadministrador=?";
+            $consulta =  $this->con->prepare($sql);
+            $consulta->bindParam(1, $idadministrador);
+            
+            $consulta->execute();
+            $this->con=null;
+            
+            echo $sql;
+            echo $idadministrador;
+            
+        } catch (PDOException $e) {
+             print "Error: ".$e->getMessage();
+             
+        }
+        
+        }
 }//--------------clase

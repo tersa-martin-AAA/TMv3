@@ -7,7 +7,7 @@ class Conexion{
     private function __construct(){
         try{
             $this->con = new PDO("mysql:host=localhost;dbname=teresamartin",
-                    'root','UTLtsu100%');
+                    'root','');
             $this->con->exec("SET CHARSET SET utf8");
         }catch(PDOException $e){
             echo "Error: ". $e->getMessage();
