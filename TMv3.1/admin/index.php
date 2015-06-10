@@ -25,10 +25,10 @@ header("Location: ../login.php");
 			 
                 <ul class="bmenu">
                     <li><a href="alumnos.php"><b>Alumnos</b></a></li>
-                    <li><a href="pagos.php"><b>Pagos</b></a></li>
+                    <li><a href="form-add-pagMensual.php"><b>Pagos</b></a></li>
                     <li><a href="reportes.php"><b>Reportes</b></a></li>
-                    <li><a href="becas.php"><b>Becas</b></a></li>
-                    <li><a href="ciclos.php"><b>Ciclos</b></a></li>
+                    <li><a href="form-select-beca.php"><b>Becas</b></a></li>
+                    <li><a href="form-select-ciclo.php"><b>Ciclos</b></a></li>
                     <li><a href="tbl-mostrar-admin.php"><b>Administradores</b></a></li>
 					<li><a href="logout.php"><b>cerrar cession</b></a></li>
                 </ul>

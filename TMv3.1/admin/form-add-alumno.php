@@ -55,33 +55,34 @@
                    <br>
                    
                     <div class="input-group">
-                    <span class="input-group-addon">M</span>
+                    <span class="input-group-addon"><samp class="glyphicon glyphicon-star"></span></span>
                     <input type="number" name="matricula" class="form-control" placeholder="Matricula">
                     </div>
                     
                     <br>
                     
                     <div class="input-group">
-                    <span class="input-group-addon">AP</span>
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
                     <input type="text" name="aPa" class="form-control" placeholder="Apellido paterno">
                     </div>
                     
                     <br>
                     
                     <div class="input-group">
-                    <span class="input-group-addon">AM</span>
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
                     <input type="text" name="aMa" class="form-control" placeholder="Apellido materno">
                     </div>
                     
                     <br>
                     
                     <div class="input-group">
-                    <span class="input-group-addon">N</span>
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>
                     <input type="text" name="nombre" class="form-control"  placeholder="Nombre">
                     </div>
                     
                     <br>
                     
+                    <label>Sexo</label>
                     <select name="sexo" class="form-control">
                     <option value="1">Hombre</option>
                     <option value="2">Mujer</option>
@@ -89,6 +90,7 @@
                     
                     <br>
                     
+                    <label>Grado</label>
                     <select name="grado" class="form-control">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -100,6 +102,7 @@
                     
                     <br>
                     
+                    <label>Grupo</label>
                     <select name="grupo" class="form-control">
                     <option value="1">A</option>
                     <option value="2">B</option>
@@ -108,6 +111,7 @@
                     
                     <br>
                     
+                    <label>Escolaridad</label>
                     <select name="escolaridad" class="form-control">
                     <option value="1">Prescolar</option>
                     <option value="2">Primaria</option>
@@ -115,6 +119,7 @@
                     
                     <br>
                     
+                    <label>Beca</label>
                     <select name="beca" class="form-control">
                     <option value="1">25%</option>
                     <option value="2">50%</option>
@@ -127,38 +132,38 @@
                     <br>
                     
                     
-                    <legend>Datos del alumno </legend>
+                    <legend>Datos del tutor </legend>
                     
                     <div class="input-group">
-                    <span class="input-group-addon">N</span>
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
                     <input type="text" name="aPaT" class="form-control" placeholder="Apellido paterno">
                     </div>
                     
                     <br>
                     
                     <div class="input-group">
-                    <span class="input-group-addon">N</span>
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
                     <input type="text" name="aMaT" class="form-control" placeholder="Apellido materno">
                     </div>
                     
                     <br>
                     
                     <div class="input-group">
-                    <span class="input-group-addon">N</span>
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>
                     <input type="text" name="nombreT" class="form-control" placeholder="Nombre">
                     </div>
                     
                     <br>
                     
                     <div class="input-group">
-                    <span class="input-group-addon">N</span>
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
                     <input type="email" name="email" class="form-control" placeholder="Email">
                     </div>
                     
                     <br>
                     
                     <div class="input-group">
-                    <span class="input-group-addon">N</span>
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-erase"></span></span>
                     <input type="number" name="telefono" class="form-control" placeholder="Telefono">
                     </div>
                     

@@ -27,10 +27,11 @@
                     <ul>
 						<li class="selected"><a href="index.php">Menu</a></li>
                         <li><a href="alumnos.php">Alumnos</a></li>
-                        <li><a href="pagos.php">Pagos</a></li>
+                        <li><a href="form-add-pagMensual.php">Pagos</a></li>
                         <li><a href="reportes.php">Reportes</a></li>
-						<li><a href="becas.php">becas</a></li>
-						<li><a href="ciclos.php">ciclos</a></li>
+						<li><a href="form-select-beca.php">Becas</a></li>
+						<li><a href="form-select-ciclo.php">Ciclos</a></li>
+                        <li><a href="tbl-mostrar-admin.php">Admini</a></li>
 						<li><a href="logout.php">Cerrar cession </a></li>
 						
                     </ul>
@@ -60,9 +61,7 @@
                <a href="form-search1-reporte.php"><div class="col-xs-6 col-sm-3 col-md-3 aciones"><h3>Reportes de ingresos</h3> 
                   <p> Descripcion del proceso</p>
                   </div></a>
-              <a href="#"><div class="col-xs-6 col-sm-3 col-md-3 aciones">
-                  <h3></h3> 
-                  <p> </p>
+              <a href="#"><div class="col-xs-6 col-sm-3 col-md-3 hidden-xs hidden-sm hidden-md hidden-lg">
                   </div></a>
               
                </div>           

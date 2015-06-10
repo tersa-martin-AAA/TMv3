@@ -28,7 +28,13 @@
                     <div class="more">
                     <ul>
 						<li class="selected"><a href="index.php">Menu</a></li>
-						<li><a href="pagos.php">Cnacelar</a></li>
+                        <li><a href="alumnos.php">Alumnos</a></li>
+                        <li><a href="form-add-pagMensual.php">Pagos</a></li>
+                        <li><a href="reportes.php">Reportes</a></li>
+						<li><a href="form-select-beca.php">Becas</a></li>
+						<li><a href="form-select-ciclo.php">Ciclos</a></li>
+						<li><a href="logout.php">Cerrar cession </a></li>
+						
 						
                     </ul>
 				    </div>
@@ -56,7 +62,8 @@
                    <legend>Datos del pago</legend>
                    
                    <br>
-                      <label class=""> Mes  </label>      
+                   
+                    <label> Mes  </label>
                     <select name="grado" placeholder="mes" class="form-control">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -76,35 +83,35 @@
                     <br>
                     
                     <div class="input-group">
-                    <span class="input-group-addon">H</span>
+                    <span class="input-group-addon">Hoy</span>
                     <input type="date" name="hoy" class="form-control">
                     </div>
                     
                     <br>
                     
                     <div class="input-group">
-                    <span class="input-group-addon">FL</span>
-                    <input type="date" name="nombre" class="form-control" placeholder="Nombre">
+                    <span class="input-group-addon">fecha limite</span>
+                    <input type="date" name="fechlim" class="form-control" placeholder="Nombre">
                     </div>
                     
                     <br>
                     
                     <div class="input-group">
-                    <span class="input-group-addon">R</span>
-                    <input type="number" name="nombre" class="form-control" placeholder="Recargos">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-paperclip"></span></span>
+                    <input type="number" name="recargos" class="form-control" placeholder="Recargos">
                     </div>
                     
                     <br>
                     
                     <div class="input-group">
                     <span class="input-group-addon">$</span>
-                    <input type="number" name="nombre" class="form-control" placeholder="pago">
+                    <input type="number" name="pago" class="form-control" placeholder="pago">
                     </div>
                     
                     <br>
                     
                     <div class="input-group">
-                    <span class="input-group-addon">M</span>
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-star-empty"></span></span>
                     <input type="number" name="nombre" class="form-control" placeholder="Matricula">
                     </div>
                     

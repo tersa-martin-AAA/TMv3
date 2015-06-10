@@ -28,7 +28,7 @@
                     <div class="more">
                     <ul>
 						<li class="selected"><a href="index.php">Menu</a></li>
-						<li><a href="ciclos.php">Cnacelar</a></li>
+						<li><a href="form-select-ciclo.php">Cnacelar</a></li>
 						
                     </ul>
 				    </div>
@@ -59,8 +59,8 @@
                    <br>
                    
                     <div class="input-group">
-                    <span class="input-group-addon">A</span>
-                    <input type="number" name="year" class="form-control" placeholder="ayo">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-globe"></span></span>
+                    <input type="number" name="year" class="form-control" placeholder="año">
                     </div>
                     
                     <br>

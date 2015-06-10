@@ -9,10 +9,7 @@ body{
     background-size: auto, cover;
 	font-family: 'Josefin Slab', Arial, sans-serif;
 }
-<!--.container{
-	position:relative;
 
-}-->
 
 .encabezado{
     margin-bottom: 8%;
@@ -42,11 +39,13 @@ body{
 }
 
 .forms{
-    background-color: deepskyblue;
+    background-color: #eee;
+    border-radius: 20px;
 }
 
 .tbl{
-    background-color: dodgerblue;
+    background-color: #eee;
+    border-radius: 20px;
 }
 .pie{
     background-color: black;
@@ -61,21 +60,10 @@ body{
 }
 
 a{
-	color: #5692D7;
+	color: #000;
 	text-decoration: none;
 }
-<!--
-.clr{
-	clear: both;
-}
-.content{
-	position:relative;
-    width:90%;
-    margin: 0 auto;
-	margin: 5%;
 
-}
--->
 
 h1{
 	margin:0px;
@@ -92,8 +80,22 @@ h1 span{
 	padding-top:10px;
 }
 
+
+h2 {
+	font-size:30px;
+	text-align:center;
+	color:#DAAB12;
+}
+
+h3 {
+    font-size: 20px;
+    text-align: center;
+    color: #5692D7;
+}
+
+
 .more{
- margin: 0 auto;
+ padding: 0 auto;
  position: relative;
 }
 .more ul{
@@ -175,101 +177,5 @@ h1 span{
 	text-shadow: 1px 1px 10px rgba(71,80,23,0.6);
 	color: #125DB3;
 }
-
-<!--.contenido{
-	margin:5px;
-	width:400px;
-	padding:15px;
-	position:relative;
-	margin:0 auto;
-	
-}-->
-
-h2 {
-	font-size:30px;
-	text-align:center;
-	color:#DAAB12;
-}
-
-
-<!--.contenidoform{
-	margin:5px;
-	width:100%;
-	padding:0px;
-	position:relative;
-	margin:0 auto;
-	
-}
-
-.contenidoform h2 {
-	font-size:50px;
-	text-align:center;
-	color:#125DB3;
-}
-
-.formularios{
-	width:50%;
-	padding: 15px;
-	background-color:#B29200;
-	color:#fff;
-	margin:0 auto;
-	border-radius: 20px;
-}
-
-
-.formulario > input, label{
-	margin-left:30%;
-}
-
-.formulario > .etiqueta{
-	width:50%;
-	margin:2px;
-	text-align:right;
-	font-size:20px;
-	float:left;
-
-}
-
-.formulario > .texbox{
-	height:30px;
-}
-
-
-
-.tabla > caption  {
-	font-size:30px;
-	color:#125DB3;
-}
-
-.contenido > .tabla {
-	font-size: 20px;
-	margin:5px;
-	background: #DABF27;
-	color:#fff;
-	weight:100%;
-}
-
-.contenidoTabla {
-	width: 80%;
-    height: 300px;
-    overflow: scroll;
-	position:relative;
-	margin:0 auto;
-}
-
-.contenidoTabla > .tabla {
-	 font-size: 20px;
-	 margin:5px;
-	 background: #DAAB12;
-	 color:#fff;
-}
-
-.contenidoTabla h2 {
-	font-size:30px;
-	text-align:center;
-	color:#DAAB12;
-}
-
--->
 
 

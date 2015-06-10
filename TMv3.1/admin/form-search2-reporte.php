@@ -28,7 +28,7 @@
                     <ul>
 						<li class="selected"><a href="index.php">Menu</a></li>
                         <li><a href="alumnos.php">Alumnos</a></li>
-                        <li><a href="pagos.php">Pagos</a></li>
+                        <li><a href="form-add-pagMensual.php">Pagos</a></li>
                         <li><a href="reportes.php">Reportes</a></li>
 						<li><a href="becas.php">becas</a></li>
 						<li><a href="ciclos.php">ciclos</a></li>

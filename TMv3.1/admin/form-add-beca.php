@@ -28,7 +28,7 @@
                     <div class="more">
                     <ul>
 						<li class="selected"><a href="index.php">Menu</a></li>
-						<li><a href="becas.php">Cnacelar</a></li>
+						<li><a href="form-select-beca.php">Cnacelar</a></li>
 						
                     </ul>
 				    </div>
@@ -58,15 +58,15 @@
                    <br>
                    
                     <div class="input-group">
-                    <span class="input-group-addon">D</span>
-                    <input type="number" name="nombre" class="form-control" placeholder="Nombre">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>
+                    <input type="text" name="nombre" class="form-control" placeholder="Nombre">
                     </div>
                     
                     <br>
                     
                     <div class="input-group">
-                    <span class="input-group-addon">Des</span>
-                    <input type="text" name="descuento" class="form-control" placeholder="Descuento">
+                        <span class="input-group-addon">%</span>
+                    <input type="number" name="descuento" class="form-control" placeholder="Descuento">
                     </div>
                     
                     <br>
