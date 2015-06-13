@@ -51,18 +51,23 @@
               <div class="row rowsubmenu">
               
               <a href="form-add-alumno.php"><div class="col-xs-6 col-sm-3 col-md-3 aciones">
-                 <h3>Inscripcion</h3> 
+                 <h3>Inscripcion</h3>
+                  <span class="label label-primary"><span class="glyphicon glyphicon-user" ></span></span>
                  <p> Descripcion del proceso</p>
                   </div></a>
               <a href="form-matricula-alumno.php"><div class="col-xs-6 col-sm-3 col-md-3 aciones">
-                  <h3>Editar datos</h3> 
+                  <h3>Editar datos</h3>
+                  <span class="label label-primary"><span class="glyphicon glyphicon-pencil" ></span></span>
                   <p> Descripcion del proceso</p>
                   </div></a>
-               <a href="form-matricula-alumno.php"><div class="col-xs-6 col-sm-3 col-md-3 aciones"><h3>Bajas de matricula</h3> 
+               <a href="form-matricula-alumno.php"><div class="col-xs-6 col-sm-3 col-md-3 aciones">
+                 <h3>Bajas de matricula</h3>
+                 <span class="label label-primary"><span class="glyphicon glyphicon-remove" ></span></span>
                   <p> Descripcion del proceso</p>
                   </div></a>
               <a href="form-matricula-alumno.php"><div class="col-xs-6 col-sm-3 col-md-3 aciones">
-                  <h3>Alta de matricula</h3> 
+                  <h3>Alta de matricula</h3>
+                  <span class="label label-primary"><span class="glyphicon glyphicon-ok" ></span></span>
                   <p> Descripcion del proceso</p>
                   </div></a>
               

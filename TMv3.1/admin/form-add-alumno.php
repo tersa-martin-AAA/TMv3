@@ -82,7 +82,7 @@
                     
                     <br>
                     
-                    <label>Sexo</label>
+                    <label class="mitooltip" title="El sexo del alumno" data-placement="right">Sexo</label>
                     <select name="sexo" class="form-control">
                     <option value="1">Hombre</option>
                     <option value="2">Mujer</option>
@@ -90,7 +90,7 @@
                     
                     <br>
                     
-                    <label>Grado</label>
+                    <label class="mitooltip" title="Al grado a que va entrar" data-placement="right">Grado</label>
                     <select name="grado" class="form-control">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -102,7 +102,7 @@
                     
                     <br>
                     
-                    <label>Grupo</label>
+                    <label class="mitooltip" title="Al grupo a que va entrar" data-placement="right">Grupo</label>
                     <select name="grupo" class="form-control">
                     <option value="1">A</option>
                     <option value="2">B</option>
@@ -111,7 +111,7 @@
                     
                     <br>
                     
-                    <label>Escolaridad</label>
+                    <label class="mitooltip" title="A que escolaridad va entrara el alumno" data-placement="right">Escolaridad</label>
                     <select name="escolaridad" class="form-control">
                     <option value="1">Prescolar</option>
                     <option value="2">Primaria</option>
@@ -119,7 +119,7 @@
                     
                     <br>
                     
-                    <label>Beca</label>
+                    <label class="mitooltip" title="Selecciona el tipo de beca para el alumno" data-placement="right">Beca</label>
                     <select name="beca" class="form-control">
                     <option value="1">25%</option>
                     <option value="2">50%</option>
@@ -186,6 +186,7 @@
                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
     <script src="js/bootstrap.min.js"></script>
+      <script>$('.mitooltip').tooltip();</script>
   </body>
 </html>
 

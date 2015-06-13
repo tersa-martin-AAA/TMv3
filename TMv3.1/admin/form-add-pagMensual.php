@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
    
-    <title>Teresa Martin Sistema Webe</title>
+    <title>Teresa Martin Sistema Web</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -33,6 +33,7 @@
                         <li><a href="reportes.php">Reportes</a></li>
 						<li><a href="form-select-beca.php">Becas</a></li>
 						<li><a href="form-select-ciclo.php">Ciclos</a></li>
+						<li><a href="tbl-mostrar-admin.php">Admini</a></li>
 						<li><a href="logout.php">Cerrar cession </a></li>
 						
 						
@@ -63,7 +64,7 @@
                    
                    <br>
                    
-                    <label> Mes  </label>
+                    <label class="mitooltip" title="Selecciona el tipo de beca para el alumno" data-placement="right">Mes</label>
                     <select name="grado" placeholder="mes" class="form-control">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -83,35 +84,43 @@
                     <br>
                     
                     <div class="input-group">
-                    <span class="input-group-addon">Hoy</span>
-                    <input type="date" name="hoy" class="form-control">
+                    <span class="input-group-addon mitooltip" title="Verifica si la fechas es la de hoy" data-placement="top">Hoy</span>
+                    <input type="text" name="hoy" 
+                        value="<?php
+								echo date("d/m/Y");			
+							?>" 
+                        class="form-control" readonly>
                     </div>
                     
                     <br>
                     
                     <div class="input-group">
-                    <span class="input-group-addon">fecha limite</span>
-                    <input type="date" name="fechlim" class="form-control" placeholder="Nombre">
+                    <span class="input-group-addon mitooltip" title="Verifica si es diferente con 29 dias mas repesto a la de arriva" data-placement="top">fecha limite</span>
+                    <input type="text" name="fechlim" class="form-control" value=" <?php $hoy = time();
+                        $sumar30 = 60*60*24*29; //29 dias
+                        $nuevafecha = $hoy + $sumar30;
+                        echo date("d/m/Y", $nuevafecha);?>" readonly >
                     </div>
                     
                     <br>
+                    <br>
                     
                     <div class="input-group">
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-paperclip"></span></span>
+                    <span class="input-group-addon mitooltip" title="Agrega los recargos en caso de haber" data-placement="top"><span class="glyphicon glyphicon-paperclip"></span></span>
                     <input type="number" name="recargos" class="form-control" placeholder="Recargos">
                     </div>
                     
                     <br>
                     
                     <div class="input-group">
-                    <span class="input-group-addon">$</span>
+                    <span class="input-group-addon mitooltip" title="Escribe la cantidad del pago a realizar" data-placement="top">$</span>
                     <input type="number" name="pago" class="form-control" placeholder="pago">
                     </div>
                     
                     <br>
                     
                     <div class="input-group">
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-star-empty"></span></span>
+                    <span class="input-group-addon mitooltip" title="Escribe la matricula del estudiante" data-placement="top"><span class="glyphicon glyphicon-star-empty"></span></span>
                     <input type="number" name="nombre" class="form-control" placeholder="Matricula">
                     </div>
                     
@@ -134,5 +143,6 @@
               <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
     <script src="js/bootstrap.min.js"></script>
+    <script>$('.mitooltip').tooltip();</script>
   </body>
 </html>

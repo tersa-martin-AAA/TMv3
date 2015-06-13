@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
    
-    <title>Teresa Martin Sistema Webe</title>
+    <title>Teresa Martin Sistema Web</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -52,13 +52,17 @@
               
               <a href="form-matricula-alumno.php"><div class="col-xs-6 col-sm-3 col-md-3 aciones">
                  <h3>Consulta de alumno</h3> 
-                 <p> Descripcion del proceso</p>
-                  </div></a>
-              <a href="form-search1-gg.php"><div class="col-xs-6 col-sm-3 col-md-3 aciones">
-                  <h3>Consulta de grupos</h3> 
+                  <span class="label label-primary"><span class="glyphicon glyphicon-book"> </span></span>
                   <p> Descripcion del proceso</p>
                   </div></a>
-               <a href="form-search1-reporte.php"><div class="col-xs-6 col-sm-3 col-md-3 aciones"><h3>Reportes de ingresos</h3> 
+              <a href="form-search1-gg.php"><div class="col-xs-6 col-sm-3 col-md-3 aciones">
+                  <h3>Consulta de grupos</h3>
+                  <span class="label label-primary"><span class="glyphicon glyphicon-list-alt"> </span></span>
+                  <p> Descripcion del proceso</p>
+                  </div></a>
+               <a href="form-search1-reporte.php"><div class="col-xs-6 col-sm-3 col-md-3 aciones">
+                 <h3>Reportes de ingresos</h3>
+                 <span class="label label-primary"><span class="glyphicon glyphicon-usd"> </span></span> 
                   <p> Descripcion del proceso</p>
                   </div></a>
               <a href="#"><div class="col-xs-6 col-sm-3 col-md-3 hidden-xs hidden-sm hidden-md hidden-lg">

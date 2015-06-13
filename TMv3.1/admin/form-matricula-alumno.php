@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
    
-    <title>Teresa Martin Sistema Webe</title>
+    <title>Teresa Martin Sistema Web</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -55,14 +55,14 @@
                    <br>
                    
                     <div class="input-group">
-                    <span class="input-group-addon">M</span>
+                        <span class="input-group-addon mitooltip" title="Ingresa la matricula del alumno" data-placement="top"><span class="glyphicon glyphicon-star-empty"></span></span>
                     <input type="number" name="matricula" class="form-control" placeholder="Matricula">
                     </div>
 
                     <br>
-                    <input type="submit" class="btn btn-success" value="ENVIAR">
+                    <input type="submit" class="btn btn-primary" value="ENVIAR">
                     <br>  
-                    <br>  
+                    <br>
                     <br>  
                     
                   </form>
@@ -77,5 +77,6 @@
                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
     <script src="js/bootstrap.min.js"></script>
+    <script>$('.mitooltip').tooltip();</script>
   </body>
 </html>

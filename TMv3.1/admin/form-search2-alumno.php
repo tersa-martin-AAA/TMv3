@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
    
-    <title>Teresa Martin Sistema Webe</title>
+    <title>Teresa Martin Sistema Web</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -30,8 +30,9 @@
                         <li><a href="alumnos.php">Alumnos</a></li>
                         <li><a href="pagos.php">Pagos</a></li>
                         <li><a href="reportes.php">Reportes</a></li>
-						<li><a href="becas.php">becas</a></li>
-						<li><a href="ciclos.php">ciclos</a></li>
+						<li><a href="becas.php">Becas</a></li>
+						<li><a href="ciclos.php">Ciclos</a></li>
+						<li><a href="tbl-mostrar-admin.php">Admini</a></li>
 						<li><a href="logout.php">Cerrar cession </a></li>
 						
                     </ul>

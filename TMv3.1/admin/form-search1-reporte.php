@@ -28,7 +28,7 @@
                     <div class="more">
                     <ul>
 						<li class="selected"><a href="index.php">Menu</a></li>
-                        <li><a href="alumnos.php">Cancelar</a></li>				
+                        <li><a href="reportes.php">Cancelar</a></li>				
                     </ul>
 				    </div>
              </div>
@@ -38,7 +38,7 @@
               <div class="row">
               <div class="col-xs-1 col-sm-2 col-md-3 vacio"></div>
               <div class="col-xs-10 col-sm-8 col-md-6 subtitulo">
-                  <h2> Agregar alumno </h2>
+                  <h2> Genera tu reporte </h2>
               </div>
               
               <div class="col-xs-1 col-sm-2 col-md-3 vacio"></div>

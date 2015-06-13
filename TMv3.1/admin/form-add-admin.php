@@ -27,7 +27,7 @@
                     <div class="more">
                     <ul>
 						<li class="selected"><a href="index.php">Menu</a></li>
-                        <li><a href="alumnos.php">Cancelar</a></li>				
+                        <li><a href="tbl-mostrar-admin.php">Cancelar</a></li>				
                     </ul>
 				    </div>
              </div>
@@ -53,35 +53,28 @@
                             <legend>Datos del personales </legend>
 
 							<div class="input-group">
-                            <span class="input-group-addon"><samp class="glyphicon glyphicon-star"></span></span>
+                            <span class="input-group-addon mitooltip" title="Matricula del Administrador" data-placement="top"><samp class="glyphicon glyphicon-star"></span></span>
                             <input type="text" name="id" class="form-control" placeholder="ID" onlyrear>
                             </div>
                     
                             <br>
                             
                             <div class="input-group">
-                            <span class="input-group-addon"><samp class="glyphicon glyphicon-star"></span></span>
+                            <span class="input-group-addon mitooltip" title="Nombre del administrador" data-placement="top"><samp class="glyphicon glyphicon-star"></span></span>
                             <input type="text" name="nombre" class="form-control" placeholder="Nombre" onlyrear>
                             </div>
                     
                             <br>
                             
                             <div class="input-group">
-                            <span class="input-group-addon"><samp class="glyphicon glyphicon-star"></span></span>
-                            <input type="text" name="paterno" class="form-control" placeholder="Nombre" onlyrear>
-                            </div>
-                    
-                            <br>
-                            
-                            <div class="input-group">
-                            <span class="input-group-addon"><samp class="glyphicon glyphicon-star"></span></span>
+                            <span class="input-group-addon mitooltip" title="Primer apellido del administrador" data-placement="top" ><samp class="glyphicon glyphicon-star"></span></span>
                             <input type="text" name="paterno" class="form-control" placeholder="Apellido paterno" onlyrear>
                             </div>
                     
                             <br>
                             
                             <div class="input-group">
-                            <span class="input-group-addon"><samp class="glyphicon glyphicon-star"></span></span>
+                            <span class="input-group-addon mitooltip" title="Segundo apellido del administrador" data-placement="top" ><samp class="glyphicon glyphicon-star"></span></span>
                             <input type="text" name="materno" class="form-control" placeholder="Apellido materno" onlyrear>
                             </div>
                     
@@ -90,14 +83,14 @@
                             <legend>Datos del la cuenta </legend>
                             
                             <div class="input-group">
-                            <span class="input-group-addon"><samp class="glyphicon glyphicon-star"></span></span>
+                            <span class="input-group-addon mitooltip" title="Contraseña del administrador" data-placement="top" ><samp class="glyphicon glyphicon-star"></span></span>
                             <input type="text" name="password" class="form-control" placeholder="Password" onlyrear>
                             </div>
                     
                             <br>
                             
                             <div class="input-group">
-                            <span class="input-group-addon"><samp class="glyphicon glyphicon-star"></span></span>
+                            <span class="input-group-addon mitooltip" title="Todos debe de ser 2" data-placement="top" ><samp class="glyphicon glyphicon-star"></span></span>
                             <input type="text" name="privilegios" class="form-control" placeholder="Privilegios" onlyrear>
                             </div>
                     
@@ -121,5 +114,6 @@
                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
     <script src="js/bootstrap.min.js"></script>
+    <script>$('.mitooltip').tooltip();</script>
   </body>
 </html>

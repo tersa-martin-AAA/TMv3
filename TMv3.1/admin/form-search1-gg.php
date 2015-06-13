@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
    
-    <title>Teresa Martin Sistema Webe</title>
+    <title>Teresa Martin Sistema Web</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
                     <div class="more">
                     <ul>
 						<li class="selected"><a href="index.php">Menu</a></li>
-                        <li><a href="alumnos.php">Cancelar</a></li>				
+                        <li><a href="reportes.php">Cancelar</a></li>				
                     </ul>
 				    </div>
              </div>
