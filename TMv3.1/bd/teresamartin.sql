@@ -3,8 +3,8 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-05-2015 a las 01:52:57
--- Versión del servidor: 5.6.21-log
+-- Tiempo de generación: 20-06-2015 a las 01:18:36
+-- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.6.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -510,9 +510,10 @@ CREATE TABLE IF NOT EXISTS `administrador` (
 --
 
 INSERT INTO `administrador` (`idadministrador`, `nombre`, `a_paterno`, `a_materno`, `password`, `idprivilegios`) VALUES
-(1, 'Alejandro', 'Tellez', 'Aguilera', '1234', 1),
+(1, 'Alejandro', 'TÃ©llez', 'Aguilera', '1234', 1),
 (2, 'Alan ', 'Cordoba ', 'Espinosa', '1234', 2),
-(3, 'Laura', 'Acevedo', 'Zarraga', '1234', 3);
+(3, 'Laura', 'Acevedo', 'Zarraga', '1234', 3),
+(201522, 'miriam', 'martinez', 'jimenez', 'adf', 2);
 
 -- --------------------------------------------------------
 
@@ -530,16 +531,18 @@ CREATE TABLE IF NOT EXISTS `alumno` (
   `idgg` int(11) NOT NULL,
   `idescolaridad` int(11) NOT NULL,
   `idtutor` int(11) NOT NULL,
-  `idbeca` int(11) NOT NULL
+  `idbeca` int(11) NOT NULL,
+  `idgrado` int(11) NOT NULL,
+  `idgrupo` char(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `alumno`
 --
 
-INSERT INTO `alumno` (`matricula`, `a_paterno`, `a_materno`, `nombre`, `idsexo`, `idestatus`, `idgg`, `idescolaridad`, `idtutor`, `idbeca`) VALUES
-(12000304, 'Ruiz', 'Sanchez', 'Antonio', 2, 1, 2, 2, 1, 2),
-(12002023, 'Domingez', 'solis', 'Ana Alicia', 2, 1, 1, 1, 1, 1);
+INSERT INTO `alumno` (`matricula`, `a_paterno`, `a_materno`, `nombre`, `idsexo`, `idestatus`, `idgg`, `idescolaridad`, `idtutor`, `idbeca`, `idgrado`, `idgrupo`) VALUES
+(2, 'Domingez', 'solis', 'Ana Alicia', 4, 1, 1, 1, 2, 3, 2, 'a'),
+(12000304, 'Ruiz', 'Sanchez', 'Antonio', 2, 1, 2, 2, 1, 2, 0, '0');
 
 --
 -- Disparadores `alumno`
@@ -574,18 +577,19 @@ DELIMITER ;
 CREATE TABLE IF NOT EXISTS `beca` (
 `idbeca` int(11) NOT NULL,
   `nombre` varchar(45) NOT NULL,
-  `descuento` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+  `descuento` float(9,2) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `beca`
 --
 
 INSERT INTO `beca` (`idbeca`, `nombre`, `descuento`) VALUES
-(1, 'parcial', 50),
-(2, 'parcial2', 25),
-(3, 'parcial3', 75),
-(4, 'parcial4', 100);
+(1, 'parcial', 0.25),
+(2, 'parcial2', 0.50),
+(3, 'parcial3', 0.75),
+(4, 'parcial4', 1.00),
+(7, 'demo', 0.10);
 
 -- --------------------------------------------------------
 
@@ -595,9 +599,9 @@ INSERT INTO `beca` (`idbeca`, `nombre`, `descuento`) VALUES
 
 CREATE TABLE IF NOT EXISTS `ciclo` (
 `idciclo` int(11) NOT NULL,
-  `ciclo` varchar(10) NOT NULL,
+  `ciclo` varchar(25) NOT NULL,
   `idyear` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ciclo`
@@ -608,7 +612,9 @@ INSERT INTO `ciclo` (`idciclo`, `ciclo`, `idyear`) VALUES
 (3, '2016-2017', 2),
 (4, '2017-2018', 3),
 (5, '2018-2019', 4),
-(9, '6', 3);
+(9, '6', 3),
+(10, 'asdfsdf', 0),
+(13, 'Agosto-Junio', 0);
 
 -- --------------------------------------------------------
 
@@ -621,7 +627,7 @@ CREATE TABLE IF NOT EXISTS `descuentopago` (
 ,`a_paterno` varchar(45)
 ,`a_materno` varchar(45)
 ,`beca` varchar(45)
-,`% de descuento` int(11)
+,`% de descuento` float(9,2)
 ,`pago` int(11)
 );
 -- --------------------------------------------------------
@@ -712,9 +718,31 @@ CREATE TABLE IF NOT EXISTS `gg` (
 --
 
 INSERT INTO `gg` (`idgg`, `grado`, `grupo`) VALUES
-(1, '4', 'A'),
+(1, '1', 'A'),
 (2, '6', 'A'),
 (8, '2', 'C');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `grado`
+--
+
+CREATE TABLE IF NOT EXISTS `grado` (
+`idgrado` int(11) NOT NULL,
+  `grado` int(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `grupo`
+--
+
+CREATE TABLE IF NOT EXISTS `grupo` (
+`idgrupo` int(11) NOT NULL,
+  `grupo` char(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -724,21 +752,32 @@ INSERT INTO `gg` (`idgg`, `grado`, `grupo`) VALUES
 
 CREATE TABLE IF NOT EXISTS `pago` (
 `folio` int(11) NOT NULL,
-  `mes` int(11) NOT NULL,
+  `mes` varchar(25) NOT NULL,
   `fechaactual` datetime NOT NULL,
   `fechalimite` datetime NOT NULL,
   `recargos` int(11) NOT NULL,
   `pago` int(11) NOT NULL,
   `matricula` int(11) NOT NULL,
   `idadministrador` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `pago`
 --
 
 INSERT INTO `pago` (`folio`, `mes`, `fechaactual`, `fechalimite`, `recargos`, `pago`, `matricula`, `idadministrador`) VALUES
-(1, 1, '2015-08-04 00:00:00', '1900-08-03 00:00:00', 10, 1125, 12000304, 1);
+(1, '1', '2015-08-04 00:00:00', '1900-08-03 00:00:00', 10, 1125, 12000304, 1),
+(3, 'inscripcion', '2015-06-17 01:35:52', '2015-06-10 01:35:52', 35, 1535, 12000304, 1),
+(4, 'inscripcion', '2015-06-17 01:53:20', '2015-06-10 01:53:20', 35, 1485, 2, 1),
+(5, 'inscripcion', '2015-06-17 01:54:39', '2015-06-10 01:54:39', 35, 1535, 12000304, 1),
+(6, 'agosto', '2015-06-17 01:54:39', '2015-06-10 01:54:39', 35, 1535, 12000304, 1),
+(7, 'septiembre', '2015-06-17 01:54:39', '2015-06-10 01:54:39', 35, 1535, 12000304, 1),
+(8, 'octubre', '2015-06-17 01:54:39', '2015-06-10 01:54:39', 35, 1535, 12000304, 1),
+(9, 'noviembre', '2015-06-17 01:54:39', '2015-06-10 01:54:39', 35, 1535, 12000304, 1),
+(10, 'diciembre', '2015-06-17 01:54:39', '2015-06-10 01:54:39', 35, 1535, 12000304, 1),
+(11, 'inscripcion', '2015-06-17 06:35:53', '2015-06-10 06:35:53', 35, 1485, 2, 1),
+(12, 'agosto', '2015-06-17 06:35:53', '2015-06-10 06:35:53', 35, 1485, 2, 1),
+(13, 'inscripcion', '2015-06-17 06:38:13', '2015-06-10 06:38:13', 35, 1485, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -770,7 +809,7 @@ INSERT INTO `privilegios` (`idprivilegios`, `privilegios`) VALUES
 CREATE TABLE IF NOT EXISTS `sexo` (
 `idsexo` int(11) NOT NULL,
   `sexo` varchar(45) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `sexo`
@@ -778,7 +817,8 @@ CREATE TABLE IF NOT EXISTS `sexo` (
 
 INSERT INTO `sexo` (`idsexo`, `sexo`) VALUES
 (2, 'MASCULINO'),
-(3, 'hombre');
+(3, 'hombre'),
+(4, 'mujer');
 
 -- --------------------------------------------------------
 
@@ -793,16 +833,25 @@ CREATE TABLE IF NOT EXISTS `tutor` (
   `nombre` varchar(45) NOT NULL,
   `email` varchar(45) NOT NULL,
   `telefono` varchar(45) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `tutor`
 --
 
 INSERT INTO `tutor` (`idtutor`, `a_paterno`, `a_materno`, `nombre`, `email`, `telefono`) VALUES
-(1, 'Gonzalez', 'sanchez', 'Andrea', 'ariesandrea@outlook.com', '4214765019'),
+(1, '', '', '', '', ''),
 (2, 'Alcantar', 'Saucedo', 'Paula', 'ariespaula@outlook.com', '4214176890'),
-(3, 'sanchez ', 'soto ', 'andrea', 'aries@hotmail.com', '4171098765');
+(3, 'sanchez ', 'soto ', 'andrea', 'aries@hotmail.com', '4171098765'),
+(4, 'as', 'as', 'as', 'as@g.com', '1232343'),
+(5, 'as', 'as', 'as', 'as@g.com', '1232343'),
+(6, 'as', 'as', 'as', 'as@g.com', '1232343'),
+(7, 'as', 'as', 'as', 'as@g.com', '1232343'),
+(8, 'as', 'as', 'as', 'as@as.com', '12345'),
+(9, 'as', 'as', 'as', 'as@as.com', '12345'),
+(10, 'demouser', 'demouser', 'demouser', 'demo@demo.com', '23456'),
+(11, 'demouser', 'demouser', 'demouser', 'demouser@d.com', '123456789'),
+(12, 'U', 'UYIO', 'GH', 'UI@HJ.COM', '890');
 
 -- --------------------------------------------------------
 
@@ -849,7 +898,7 @@ ALTER TABLE `administrador`
 -- Indices de la tabla `alumno`
 --
 ALTER TABLE `alumno`
- ADD PRIMARY KEY (`matricula`), ADD KEY `idsexo_idx` (`idsexo`), ADD KEY `idgg_idx` (`idgg`), ADD KEY `idescolaridad_idx` (`idescolaridad`), ADD KEY `idbeca_idx` (`idbeca`), ADD KEY `idestatus` (`idestatus`), ADD KEY `idtutor` (`idtutor`);
+ ADD PRIMARY KEY (`matricula`), ADD KEY `idsexo_idx` (`idsexo`), ADD KEY `idgg_idx` (`idgg`), ADD KEY `idescolaridad_idx` (`idescolaridad`), ADD KEY `idbeca_idx` (`idbeca`), ADD KEY `idestatus` (`idestatus`), ADD KEY `idtutor` (`idtutor`), ADD KEY `idgrupo` (`idgrupo`), ADD KEY `idgrado` (`idgrado`), ADD KEY `idgrado_2` (`idgrado`), ADD KEY `idgrupo_2` (`idgrupo`);
 
 --
 -- Indices de la tabla `beca`
@@ -886,6 +935,18 @@ ALTER TABLE `estatus`
 --
 ALTER TABLE `gg`
  ADD PRIMARY KEY (`idgg`);
+
+--
+-- Indices de la tabla `grado`
+--
+ALTER TABLE `grado`
+ ADD PRIMARY KEY (`idgrado`);
+
+--
+-- Indices de la tabla `grupo`
+--
+ALTER TABLE `grupo`
+ ADD PRIMARY KEY (`idgrupo`);
 
 --
 -- Indices de la tabla `pago`
@@ -925,12 +986,12 @@ ALTER TABLE `year`
 -- AUTO_INCREMENT de la tabla `beca`
 --
 ALTER TABLE `beca`
-MODIFY `idbeca` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+MODIFY `idbeca` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT de la tabla `ciclo`
 --
 ALTER TABLE `ciclo`
-MODIFY `idciclo` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+MODIFY `idciclo` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT de la tabla `detalle`
 --
@@ -952,10 +1013,20 @@ MODIFY `idestatus` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 ALTER TABLE `gg`
 MODIFY `idgg` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
+-- AUTO_INCREMENT de la tabla `grado`
+--
+ALTER TABLE `grado`
+MODIFY `idgrado` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `grupo`
+--
+ALTER TABLE `grupo`
+MODIFY `idgrupo` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT de la tabla `pago`
 --
 ALTER TABLE `pago`
-MODIFY `folio` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `folio` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT de la tabla `privilegios`
 --
@@ -965,12 +1036,12 @@ MODIFY `idprivilegios` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 -- AUTO_INCREMENT de la tabla `sexo`
 --
 ALTER TABLE `sexo`
-MODIFY `idsexo` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `idsexo` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `tutor`
 --
 ALTER TABLE `tutor`
-MODIFY `idtutor` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `idtutor` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 --
 -- Restricciones para tablas volcadas
 --
