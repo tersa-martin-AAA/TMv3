@@ -6,6 +6,28 @@ if(!isset($_SESSION['login'])){
    header("Location: login.php");
 }
 
+//  -------- DATOS PARA UPDATE --------
+   if(isset($_GET['idBeca'])){
+        $idBeca = $_GET['idBeca'];
+        include_once 'Beca.php';
+        $beca = new Beca();
+        $datos = $beca->get_beca($idBeca, null);
+        $row = $datos->fetchObject();
+      }
+
+//  -------- DATOS PARA UPDATE --------
+   if(isset($_GET['nombre'])){
+        $idBeca = $_GET['nombre'];
+        include_once 'Beca.php';
+        $beca = new Beca();
+        $datos = $beca->get_beca(null, $idBeca);
+        $row = $datos->fetchObject();
+      }
+
+   if(isset($_GET['ver'])){
+        $ver = $_GET['ver'];
+      }
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -26,6 +48,10 @@ if(!isset($_SESSION['login'])){
 
       <!---------- Style de AAA y Asociados ---------->
       <link href="css/styleAAA.css" rel="stylesheet">
+      
+      <!-- KETCHUP-->
+    <link href="css/ketchup/jquery.ketchup.css" rel="stylesheet">
+    <link href="css/ketchup/jcomfirmaction.css" rel="stylesheet">
 
    </head> 
    <body>
@@ -72,10 +98,10 @@ MENU PRINCIPAL
                   <li><a href="index.php"><i class="icon-home"></i><span>Inicio</span> </a> </li>
                   <li><a href="alumnos.php"><i class=" icon-user"></i><span>Alumnos</span> </a> </li>
                   <li><a href="pagos.php"><i class=" icon-money"></i><span>Pagos</span> </a> </li>
-                  <li class="active"><a href="reportes.php"><i class="icon-list-alt"></i><span>Reportes</span> </a> </li>
-                  <li><a href="becas.php"><i class=" icon-bookmark"></i><span>Becas</span> </a> </li>
+                  <li><a href="reportes.php"><i class="icon-list-alt"></i><span>Reportes</span> </a> </li>
+                  <li class="active"><a href="becas.php"><i class=" icon-bookmark"></i><span>Becas</span> </a> </li>
                   <li><a href="ciclos.php"><i class=" icon-refresh"></i><span>Ciclos</span> </a> </li>
-                  <li ><a href="administradores.php"><i class=" icon-user"></i><span>Administradores</span> </a> </li>
+                  <li><a href="administradores.php"><i class=" icon-user"></i><span>Administradores</span> </a> </li>
                </ul>
             </div>
             <!-- /container --> 
@@ -88,40 +114,79 @@ MENU PRINCIPAL
 CONTENIDO 
 ==================================================== -->
 
-      <div class="container">
-	
-	<div class="row">
-		
-		<div class="span12">
-			
-			<div class="error-container">
-				<h1><i class="icon-remove-circle"></i></h1>
-				
-				<h2>Lo sentimos</h2>
-				
-				<div class="error-details">
-					Por el momento esta página no se encuentra disponible. Sentimos las molestias.
-					
-				</div> <!-- /error-details -->
-				
-				<div class="error-actions">
-					<a href="index.php" class="btn btn-large btn-primary">
-						<i class="icon-chevron-left"></i>
-						&nbsp;
-						Ir a inicio lorem						
-					</a>
-					
-					
-					
-				</div> <!-- /error-actions -->
-							
-			</div> <!-- /error-container -->			
-			
-		</div> <!-- /span12 -->
-		
-	</div> <!-- /row -->
-	
-</div> <!-- /container -->
+      <div class="main">
+         <div class="main-inner">
+            <div class="container">
+               <div class="row">
+
+                  <!-- ============== FORMULARIO DE NUEVO BECA ============== -->                
+                  <div class="span12"> 
+                     <div class="widget ">
+                        <div class="widget-header">
+                           <i class="icon-user"></i>
+                           <h3>Nuevo Beca</h3>
+                           <a href="becas.php" class="cerrar_frm"><i class=" icon-remove"></i></a>
+                        </div> <!-- /widget-header -->					
+                        <div class="widget-content">
+
+                           <div class="content">
+                              <div class="pane" id="formcontrols">
+                                 <form id="edit-profile" class="form-horizontal valibeca" action="agregar_beca.php" method="post">
+                                    <fieldset>                          
+                                       <h6 class="bigstats">Información sobre la Beca</h6>
+                                       <div id="big_stats" class="cf">
+                                         <?php if(isset($idBeca)){
+                echo '<input type="hidden" name="idBeca" value="'.$row->idbeca.'">';}
+?>             
+                                          <div class="control-group">											
+                                             <label class="control-label" for="nombre">Nombre</label>
+                                             <div class="controls">
+                                                <input type="text" class="span6 disabled form-control" name="nombre" data-validate="validate(required, rangelength(1,11))" id="nombre" <?php if(isset($idBeca)){
+                echo "value='".$row->nombre."'";}
+?>             >
+                                             </div> <!-- /controls -->				
+                                          </div> <!-- /control-group -->
+                                          <div class="control-group">											
+                                             <label class="control-label" for="descuento">Descuento</label>
+                                             <div class="controls">
+                                                <span>%</span>
+                                                <input type="text" class="span6 form-control" id="descuento" data-validate="validate(required, rangelength(1,4), number)" name="descuento" <?php if(isset($idBeca)){
+               $descuento= $row->descuento*100;
+                echo "value='".$descuento."'";}
+?> >
+                                             </div> <!-- /controls -->				
+                                          </div> <!-- /control-group -->
+                                          <div class="form-actions">
+                                             <button type="submit" class="btn btn-primary"> <?php if(isset($idBeca)){
+               echo "Actualizar";}
+else{
+   echo "Guardar";}
+?> </button> 
+                                             <button class="btn">Cancelar</button>
+                                          </div> <!-- /form-actions -->
+                                       </div> <!-- /big_stats -->
+                                    </fieldset>
+                                 </form>
+
+                              </div>								
+                           </div>
+
+                        </div> <!-- /widget-content -->
+                     </div> <!-- /widget -->
+                  </div> <!-- /span12 -->
+
+
+                  <!-- ============== TABLA DE ADMINISTRADORES ============== -->               
+
+                  <!-- /span12 --> 
+               </div>
+               <!-- /row --> 
+            </div>
+            <!-- /container --> 
+         </div>
+         <!-- /main-inner --> 
+      </div>
+      <!-- /main -->
 
       <!-- ==================================================
 ANTE FOOTER 
@@ -199,6 +264,19 @@ FOOTER
       <script src="js/bootstrap.js"></script>
       <!--script src="js/base.js"></script-->
 
+<script src="js/ketchup/jquery.js"></script>
+    <script src="js/ketchup/jquery.ketchup.js"></script>
+    <script src="js/ketchup/jquery.ketchup.validations.js"></script>
+    <script src="js/ketchup/jquery.ketchup.helpers.js"></script>
+    <script src="js/ketchup/jconfirmaction.jquery.js"></script>
+    
+    <script> 
+      $(document).ready(function(){
+         
+		  $('.valibeca').ketchup();
+		  
+      });
+  </script>
 
    </body>
 </html>

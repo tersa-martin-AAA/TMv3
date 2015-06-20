@@ -7,11 +7,9 @@ if(!isset($_SESSION['login'])){
 }
 
 //  -------- Get administradores --------
-include_once 'Alumno.php';
-$alumno = new Alumno();
-$datos = $alumno->get_alumno(null);
-
-//var_dump ($datos);
+include_once 'Administrador.php';
+$admin = new Administrador();
+$datos = $admin->get_administrador(null);
 
 
 ?>
@@ -31,9 +29,10 @@ $datos = $alumno->get_alumno(null);
       <link href="css/style.css" rel="stylesheet">
       <link href="css/pages/dashboard.css" rel="stylesheet">
 
+
       <!---------- Style de AAA y Asociados ---------->
       <link href="css/styleAAA.css" rel="stylesheet">
-      
+
    </head> 
    <body>
 
@@ -70,19 +69,19 @@ MENU SECUNDARIO
       <!-- /navbar -->
 
       <!-- ==================================================
-                     MENU PRINCIPAL 
+MENU PRINCIPAL 
 =================================================== --> 
       <div class="subnavbar">
          <div class="subnavbar-inner">
             <div class="container">
                <ul class="mainnav">
                   <li><a href="index.php"><i class="icon-home"></i><span>Inicio</span> </a> </li>
-                  <li class="active"><a href="alumnos.php"><i class=" icon-user"></i><span>Alumnos</span> </a> </li>
+                  <li><a href="alumnos.php"><i class=" icon-user"></i><span>Alumnos</span> </a> </li>
                   <li><a href="pagos.php"><i class=" icon-money"></i><span>Pagos</span> </a> </li>
                   <li><a href="reportes.php"><i class="icon-list-alt"></i><span>Reportes</span> </a> </li>
                   <li><a href="becas.php"><i class=" icon-bookmark"></i><span>Becas</span> </a> </li>
                   <li><a href="ciclos.php"><i class=" icon-refresh"></i><span>Ciclos</span> </a> </li>
-                  <li><a href="administradores.php"><i class=" icon-user"></i><span>Administradores</span> </a> </li>
+                  <li class="active"><a href="administradores.php"><i class=" icon-user"></i><span>Administradores</span> </a> </li>
                </ul>
             </div>
             <!-- /container --> 
@@ -92,7 +91,7 @@ MENU SECUNDARIO
       <!-- /subnavbar -->
 
       <!-- ==================================================
-                  CONTENIDO 
+CONTENIDO 
 ==================================================== -->
 
       <div class="main">
@@ -104,37 +103,39 @@ MENU SECUNDARIO
                   <div class="span12">
                      <div class="widget">
                         <div class="widget-header"> <i class="icon-user"></i>
-                           <h3>Alumno</h3>
+                           <h3>Administradores</h3>
                         </div>
                         <!-- /widget-header -->
                         <div class="widget-content">
                            <div class="shortcuts"> 
-                              <a href="frm_alumno.php" class="shortcut">
-                                 <i class="shortcut-icon icon-plus"></i><span class="shortcut-label">Nuevo Alumno</span> </a>
+                              <a href="frm_administrador.php" class="shortcut">
+                                 <i class="shortcut-icon icon-plus"></i><span class="shortcut-label">Nuevo Administrador</span> </a>
                               <a href="javascript:;" class="shortcut" data-toggle="modal" data-target="#matricula_editar">
-                                 <i class="shortcut-icon icon-pencil"></i><span class="shortcut-label">Editar Alumno</span> </a>
-                              <a href="javascript:;" class="shortcut"data-toggle="modal" data-target="#matricula_eliminar">
-                                 <i class="shortcut-icon icon-trash"></i> <span class="shortcut-label">Eliminar Alumno</span></a>
-                              <a href="javascript:;" class="shortcut"data-toggle="modal" data-target="#matricula_ver">
-                                 <i class="shortcut-icon icon-search"></i> <span class="shortcut-label">Buscar Alumno</span></a>                              </div>
+                                 <i class="shortcut-icon icon-pencil"></i><span class="shortcut-label">Editar Administrador</span> </a>
+                              <a href="javascript:;" class="shortcut" data-toggle="modal" data-target="#matricula_eliminar">
+                                 <i class="shortcut-icon icon-trash" ></i> <span class="shortcut-label">Eliminar Administrador</span></a>
+                              <a href="javascript:;" class="shortcut" data-toggle="modal" data-target="#matricula_ver">
+                                 <i class="shortcut-icon icon-search"></i> <span class="shortcut-label">Buscar Administrador</span></a>
+                           </div>
                            <!-- /shortcuts --> 
                         </div>
                         <!-- /widget-content --> 
                      </div>
                      <!-- /span12 --> 
-                  </div>
+                  </div>                                    
+                  
                   <!-- ============== MODAL EDITAR ADMINISTRADORES ============== -->
                   <div class="modal fade" id="matricula_editar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                      <div class="modal-dialog">
                         <div class="modal-content">
                            <div class="modal-header">
                               <a class="close" data-dismiss="modal" aria-label="Close"><i class=" icon-remove"></i></a>
-                              <h4 class="modal-title" id="myModalLabel">Editar Alumno</h4>
+                              <h4 class="modal-title" id="myModalLabel">Editar Administrador</h4>
                            </div>
-                           <form action="frm_alumno.php" method="get" >
+                           <form action="frm_administrador.php" method="get" >
                            <div class="modal-body">                             
-                                <label>Inserte la matricula del Alumno</label>
-                                <input type="text" name="matricula">  
+                                <label>Inserte la matricula del Administrador</label>
+                                <input type="text" name="idadministrador">  
                            </div>
                            <div class="modal-footer">
                               <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
@@ -152,12 +153,12 @@ MENU SECUNDARIO
                         <div class="modal-content">
                            <div class="modal-header">
                               <a class="close" data-dismiss="modal" aria-label="Close"><i class=" icon-remove"></i></a>
-                              <h4 class="modal-title" id="myModalLabel">Eliminar Alumno</h4>
+                              <h4 class="modal-title" id="myModalLabel">Eliminar Administrador</h4>
                            </div>
-                           <form action="del_alumno.php" method="get" >
+                           <form action="del_administradro.php" method="get" >
                            <div class="modal-body">                             
-                                <label>Inserte la matricula del Alumno</label>
-                                <input type="text" name="matricula">  
+                                <label>Inserte la matricula del Administrador</label>
+                                <input type="text" name="idadministrador">  
                            </div>
                            <div class="modal-footer">
                               <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
@@ -174,12 +175,12 @@ MENU SECUNDARIO
                         <div class="modal-content">
                            <div class="modal-header">
                               <a class="close" data-dismiss="modal" aria-label="Close"><i class=" icon-remove"></i></a>
-                              <h4 class="modal-title" id="myModalLabel">Ver más información de Alumno</h4>
+                              <h4 class="modal-title" id="myModalLabel">Buscar Administrador</h4>
                            </div>
-                           <form action="frm_alumno.php" method="get" >
+                           <form action="frm_administrador.php" method="get" >
                            <div class="modal-body">                             
-                                <label>Inserte la matricula del Alumno</label>
-                                <input type="text" name="matricula">
+                                <label>Inserte la matricula del Administrador</label>
+                                <input type="text" name="idadministrador">
                                 <input type="hidden" name="ver" value="ver">
                            </div>
                            <div class="modal-footer">
@@ -191,79 +192,83 @@ MENU SECUNDARIO
                      </div>
                   </div>
 
-
-<!-- ============== TABLA DE ALUMNOS ============== -->    
+                  <!-- ============== TABLA DE ADMINISTRADORES ============== -->               
                   <div class="span12">
                      <!-- /widget -->                     
                      <div class="widget widget-table action-table">
-                        <div class="widget-header"> <i class="icon-th-list"></i>
-                           <h3>Lista de Alumnos</h3>
+                        <div class="widget-header"> 
+                           <a  role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  <i class="icon-th-list"></i><h3>Lista de Administradores <span class="label label-default">Lista despegable</span></h3>
+</a>
+                           
+
                         </div>
                         <!-- /widget-header -->
                         <div class="widget-content">
-                           <table class="table table-striped table-bordered get_table">
+                          <div class="collapse" id="collapseExample">
+  <div class="well">
+ 
+                           <table class="table table-striped table-bordered get_table"  id="">
                               <thead>
                                  <tr>
                                     <th> Matricula </th>
                                     <th> Nombre </th>
-                                    <th> Ciclo </th>
-                                    <th> Grado </th>
-                                    <th> Escolaridad </th>
-                                    <th> Beca</th>
-                                    <th class="td-actions"> </th>
+                                    <th> Password </th>
+                                    <th> Privilegios </th>
+                                    <th class="td-actions">Acciones </th>
                                  </tr>
                               </thead>
                               <tbody>
-                                <?php
+                                 <?php
 while ($row = $datos->fetchObject()){
                                  ?>
                                  <tr>
-                                    <td><?php echo $row->matricula;?></td>
+                                    <td><?php echo $row->idadministrador;?></td>
                                     <td><?php echo $row->nombre," ", $row->a_paterno," ", $row->a_materno;?></td>
-                                    <td><?php echo $row->idgg;?></td>
-                                    <td><?php echo $row->idgg;?></td>
-                                    <td><?php echo $row->idescolaridad;?></td>
-                                    <td><?php echo $row->idbeca;?></td>
+                                    <td><?php echo $row->password;?></td>
+                                    <td><?php echo $row->idprivilegios;?></td>
                                     <td class="td-actions">
-                                      <!------------- VER MAS ------------->
-                                       <span id="tooltip-ver" class="input-group-addon mitooltip" title="Ver más datos del Alumno" data-placement="top">
-                                         <a href="frm_alumno.php?matricula=<?php echo $row->matricula;?>&ver=ver" class="btn btn-small btn-invert" title="Ver mas">
-                                          <i class="btn-icon-only icon-zoom-in"> </i></a></span>
-                                          <!------------- EDITAR ------------->
-                                          <span id="tooltip-editar" class="input-group-addon mitooltip" title="Editar información del Alumno" data-placement="top">
-                                       <a href="frm_alumno.php?matricula=<?php echo $row->matricula;?>" class="btn btn-small btn-invert" title="Editar">
-                                          <i class="btn-icon-only icon-pencil"> </i></a></span>
-                                          <!------------- ELIMINAR ------------->
-                                          <span id="tooltip-eliminar" class="input-group-addon mitooltip" title="Eliminar Alumno" data-placement="top">
-                                       <a href="del_alumno.php?matricula=<?php echo $row->matricula;?>" class="btn btn-small btn-invert" title="Eliminar">
-                                          <i class="btn-icon-only icon-trash"> </i></a></span>
-                                    </td>
+                                       <!-- Ver mas -->
+                                       <span id="tooltip-ver" class="input-group-addon mitooltip" title="Ver más datos del Administrador" data-placement="top">
+                                       <a class="btn btn-small btn-invert" href="frm_administrador.php?idadministrador=<?php echo $row->idadministrador;?>&ver=ver" title="Ver mas"><i class="btn-icon-only icon-zoom-in"> </i></a></span>      
+                                       <!-- Editar -->
+                                       <span id="tooltip-ver" class="input-group-addon mitooltip" title="Editar datos del Administrador" data-placement="top">
+                                       <a class="btn btn-small btn-invert" href="frm_administrador.php?idadministrador=<?php echo $row->idadministrador;?>" title="Editar"><i class="btn-icon-only icon-pencil"> </i></a></span>
+                                       <!-- Eliminar -->
+                                       <span id="tooltip-ver" class="input-group-addon mitooltip" title="Eliminar Administrador" data-placement="top">
+                                       <a class="btn btn-small btn-invert" href="del_administradro.php?idadministrador=<?php echo $row->idadministrador;?>" title="eliminar"><i class="btn-icon-only icon-trash"> </i></a></span>
                                  </tr>
                                  <?php
 }
                                  ?>
+
+
+
                               </tbody>
                            </table>
-                           
-                           <!-- ============== PAGINACION
-                           <div class="row">
-                              <div>
-                                 <nav>
-                              <ul class="pagination">
-                                 <li><a href="">&laquo;</a></li>
-                                 <li><a href="">1</a></li>
-                                 <li><a href="">2</a></li>
-                                 <li><a href="">3</a></li>
-                                 <li><a href="">4</a></li>
-                                 <li><a href="">5</a></li>
-                                 <li><a href="">&raquo;</a></li>
-                              </ul>
-                           </nav> 
-                              </div>
-                           </div>
-                             ============== -->
-                        
                               
+  </div><!-- / well-->
+</div><!-- / collapse-->
+                           <!-- ============== PAGINACION 
+<div class="row">
+<div>
+<nav>
+<ul class="pagination">
+<li><a href="">&laquo;</a></li>
+<li><a href="">1</a></li>
+<li><a href="">2</a></li>
+<li><a href="">3</a></li>
+<li><a href="">4</a></li>
+<li><a href="">5</a></li>
+<li><a href="">&raquo;</a></li>
+</ul>
+</nav> 
+</div>
+</div>
+============== -->
+
+
+
                         </div>
                         <!-- /widget-content --> 
                      </div>
@@ -354,9 +359,8 @@ FOOTER
 <script src="js/chart.min.js" type="text/javascript"></script--> 
       <script src="js/bootstrap.js"></script>
       <!--script src="js/base.js"></script-->
+
 <script>$('.mitooltip').tooltip();</script>
-      
 
    </body>
 </html>
-
