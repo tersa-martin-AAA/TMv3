@@ -16,15 +16,17 @@ if(!isset($_SESSION['login'])){
 
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
       <meta name="apple-mobile-web-app-capable" content="yes">
+      
+      <link rel="shortcut icon" href="../img/ico/favicon.png">
 
-      <link href="css/bootstrap.min.css" rel="stylesheet">
-      <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+      <link href="../css/bootstrap.min.css" rel="stylesheet">
+      <link href="../css/bootstrap-responsive.min.css" rel="stylesheet">
       <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
-      <link href="css/font-awesome.css" rel="stylesheet">
-      <link href="css/style.css" rel="stylesheet">
-      <link href="css/pages/dashboard.css" rel="stylesheet">
+      <link href="../css/font-awesome2.css" rel="stylesheet">
+      <link href="../css/style.css" rel="stylesheet">
+      <link href="../css/pages/dashboard.css" rel="stylesheet">
 
-      <link href="css/styleAAA.css" rel="stylesheet">
+      <link href="../css/styleAAA.css" rel="stylesheet">
 
    </head> 
    <body>
@@ -41,6 +43,9 @@ MENU SECUNDARIO
                <a class="brand" href="index.php">TERESA MARTIN </a>
                <div class="nav-collapse">
                   <ul class="nav pull-right">
+                    <li>
+                        <a href="../index.php" ><i class="icon-home"></i>&nbsp;Página Publicitaria<b class="caret"></b></a>
+                     </li>
                      <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i>&nbsp;<?php echo $_SESSION['nombre']?><b class="caret"></b></a>
                         <ul class="dropdown-menu">
@@ -48,6 +53,7 @@ MENU SECUNDARIO
                            <li><a href="login.php"><i class="icon-off"></i><span>   Cerrar Sesion </span></a></li>
                         </ul>
                      </li>
+                     
                   </ul>
                   <form class="navbar-search pull-right">
                      <input type="text" class="search-query" placeholder="Buscar">
@@ -75,6 +81,7 @@ MENU PRINCIPAL
                   <li><a href="becas.php"><i class=" icon-bookmark"></i><span>Becas</span> </a> </li>
                   <li><a href="ciclos.php"><i class=" icon-refresh"></i><span>Ciclos</span> </a> </li>
                   <li><a href="administradores.php"><i class=" icon-user"></i><span>Administradores</span> </a> </li>
+                  <li><a href="configpublic.php"><i class="icon-cog"></i><span>Pagina Publicitaria</span> </a> </li>
                </ul>
             </div>
             <!-- /container --> 
@@ -224,13 +231,13 @@ CONTENIDO
                            <!-- Wrapper for slides -->
                            <div class="carousel-inner" role="listbox">
                               <div class="item active">
-                                 <img src="img/index1.png" alt="...">
+                                 <img src="../img/index1.png" alt="...">
                                  <div class="carousel-caption">
                                     &nbsp;
                                  </div>
                               </div>
                               <div class="item">
-                                 <img src="img/index2.png" alt="...">
+                                 <img src="../img/index2.png" alt="...">
                                  <div class="carousel-caption">
                                     &nbsp;
                                  </div>
@@ -384,12 +391,12 @@ FOOTER
       <!-- Le javascript
 ================================================== --> 
       <!-- Placed at the end of the document so the pages load faster --> 
-      <script src="js/jquery-1.7.2.min.js"></script> 
+      <script src="../js/jquery-1.7.2.min.js"></script> 
       <!--script src="js/excanvas.min.js"></script> 
 <script src="js/chart.min.js" type="text/javascript"></script--> 
 
 
-      <script src="js/bootstrap.js"></script>
+      <script src="../js/bootstrap.js"></script>
       <!--script src="js/base.js"></script--> 
       <script>
          $('#btn-info-1').popover('show');

@@ -1,5 +1,9 @@
 <?php
-session_start();
+
+if($_POST['estatus']!=3){
+   session_start();
+}
+
 include_once 'Alumno.php';
 include_once 'Tutor.php';
 include_once 'Alumno1.php';
@@ -22,22 +26,21 @@ $Tutor = $tutor->get_tutor($idTutor1, $email_tutor);
 
 if($Tutor != null){
    $idTutor1 = $Tutor->fetchObject();
-   $idTutor = $idTutor1->idtutor;
+   $idTutor3 = $idTutor1->idtutor;
 }else{
-   $idTutor = $_POST['idTutor'];
-}
-   
-$tutor->set_tutor($idTutor, $a_paterno_tutor, $a_materno_tutor, $nombre_tutor, $email_tutor, $telefono_tutor);
-$newtutor = $tutor->add_tutor();
-
-if($Tutor != null){
-   $Tutor = $tutor->get_tutor($idTutor1, $email_tutor);
-   $idTutor2 = $Tutor->fetchObject();
+   $tutor->set_tutor($idTutor, $a_paterno_tutor, $a_materno_tutor, $nombre_tutor, $email_tutor, $telefono_tutor);
+   $newtutor = $tutor->add_tutor();
+   $Tutores = $tutor->get_tutor($idTutor, $email_tutor);
+   $idTutor2 = $Tutores->fetchObject();
    $idTutor3 = $idTutor2->idtutor;
 }
+   
+if(isset($_POST['idTutor'])){
+      $idTutor3 = $_POST['idTutor'];
+   }
+  
 
-
-if($newtutor == TRUE){
+if($idTutor3 != null){
    
    $alumno = new Alumno();
 
@@ -54,6 +57,7 @@ if($newtutor == TRUE){
    $idGrado = $_POST['grado'];
    $idGrupo = $_POST['grupo'];
    
+   
    // -------------- Variables de Alumno --------------
   if(isset($_POST['matricula'])){
      $matricula= $_POST['matricula'];
@@ -69,14 +73,17 @@ if($newtutor == TRUE){
      
      $newalumno = $alumno->add_alumno1($matricula, $a_paterno, $a_materno, $nombre, $idSexo, $idEstatus, $idGg, $idEscolaridad, $idTutor3, $idBeca,$idGrado, $idGrupo);
   }
-   
-   
-   
-   
-   
-   
-   if($pagohecho = TRUE){
-      header("Location: alumnos.php");
+      
+   if($newalumno = TRUE){
+      if($idEstatus != 3){
+         header("Location: alumnos.php");
+      }else{
+         $datos = $alumno->get_alumno($matricula);
+         $row = $datos->fetchObject();
+         $matricula_solicitud = $row->matricula;
+          header("Location: ../solicitud_alumno.php?matricula_solicitud=$matricula_solicitud&matricula_tutor=$idTutor3");
+      }
+      
    }else {
       header("Location: index.php");
    }

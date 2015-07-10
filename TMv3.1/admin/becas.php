@@ -25,19 +25,19 @@ $datos = $beca->get_beca(null, null);
       <meta name="apple-mobile-web-app-capable" content="yes">
 
      <!---------- Style de AAA y Asociados ---------->
-      <link href="css/bootstrap.min.css" rel="stylesheet">
-      <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+      <link href="../css/bootstrap.min.css" rel="stylesheet">
+      <link href="../css/bootstrap-responsive.min.css" rel="stylesheet">
       
       <!---------- Style de AAA y Asociados ---------->
       <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
       
       <!---------- Style de AAA y Asociados ---------->
-      <link href="css/font-awesome.css" rel="stylesheet">
-      <link href="css/style.css" rel="stylesheet">
-      <link href="css/pages/dashboard.css" rel="stylesheet">
+      <link href="../css/font-awesome2.css" rel="stylesheet">
+      <link href="../css/style.css" rel="stylesheet">
+      <link href="../css/pages/dashboard.css" rel="stylesheet">
 
       <!---------- Style de AAA y Asociados ---------->
-      <link href="css/styleAAA.css" rel="stylesheet">
+      <link href="../css/styleAAA.css" rel="stylesheet">
       
    </head> 
    <body>
@@ -54,11 +54,15 @@ MENU SECUNDARIO
                <a class="brand" href="index.php">TERESA MARTIN </a>
                <div class="nav-collapse">
                   <ul class="nav pull-right">
+                    <li>
+                        <a href="../index.php" ><i class="icon-home"></i>&nbsp;Página Publicitaria<b class="caret"></b></a>
+                     </li>
                      <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i>&nbsp;<?php echo $_SESSION['nombre']?><b class="caret"></b></a>
                         <ul class="dropdown-menu">
                            <li><a href="javascript:;"><i class="icon-cog"></i><span>   Configuración </span></a></li>
                            <li><a href="login.php"><i class="icon-off"></i><span>   Cerrar Sesion </span></a></li>
+                           
                         </ul>
                      </li>
                   </ul>
@@ -88,6 +92,7 @@ MENU SECUNDARIO
                   <li class="active"><a href="becas.php"><i class=" icon-bookmark"></i><span>Becas</span> </a> </li>
                   <li><a href="ciclos.php"><i class=" icon-refresh"></i><span>Ciclos</span> </a> </li>
                   <li><a href="administradores.php"><i class=" icon-user"></i><span>Administradores</span> </a> </li>
+                  <li><a href="configpublic.php"><i class="icon-cog"></i><span>Pagina Publicitaria</span> </a> </li>
                </ul>
             </div>
             <!-- /container --> 
@@ -304,10 +309,10 @@ FOOTER
       <!-- Le javascript
 ================================================== --> 
       <!-- Placed at the end of the document so the pages load faster --> 
-      <script src="js/jquery-1.7.2.min.js"></script> 
+      <script src="../js/jquery-1.7.2.min.js"></script> 
       <!--script src="js/excanvas.min.js"></script> 
 <script src="js/chart.min.js" type="text/javascript"></script--> 
-      <script src="js/bootstrap.js"></script>
+      <script src="../js/bootstrap.js"></script>
       <!--script src="js/base.js"></script-->
       
 <script>$('.mitooltip').tooltip();</script>
